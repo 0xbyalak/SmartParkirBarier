@@ -1,49 +1,38 @@
-# 🚗 Sistem Parkir Otomatis Berbasis RFID
-
 <div align="center">
-
-![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white)
-![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)
-
-**Sistem kontrol akses parkir otomatis dengan manajemen kapasitas real-time menggunakan teknologi RFID**
-
-[Fitur](#-fitur) • [Teknologi](#-teknologi) • [Instalasi](#-cara-instalasi) • [Dokumentasi](#-dokumentasi)
+  
+# Sistem Parkir Otomatis Berbasis RFID
 
 </div>
 
----
-
-## 📋 Deskripsi
+##  Deskripsi
 
 Sistem parkir otomatis ini merupakan solusi IoT untuk mengelola area parkir dengan kontrol akses berbasis RFID dan monitoring kapasitas real-time. Sistem ini terdiri dari dua controller (Arduino Mega dan Arduino Uno) yang berkomunikasi secara serial untuk mengelola pintu masuk dan pintu keluar secara terpisah namun terintegrasi.
 
 ### Masalah yang Diselesaikan
-- ✅ Kontrol akses parkir yang aman dan otomatis
-- ✅ Monitoring kapasitas parkir secara real-time
-- ✅ Pencegahan over-capacity dengan sistem lock otomatis
-- ✅ Manajemen keluar-masuk kendaraan yang efisien
-- ✅ Tracking jumlah kendaraan di area parkir
+-  Kontrol akses parkir yang aman dan otomatis
+-  Monitoring kapasitas parkir secara real-time
+-  Pencegahan over-capacity dengan sistem lock otomatis
+-  Manajemen keluar-masuk kendaraan yang efisien
+-  Tracking jumlah kendaraan di area parkir
 
----
 
-## ✨ Fitur
+## Fitur
 
-### 🎯 Fitur Utama
+### Fitur Utama
 - **Kontrol Akses RFID**: Autentikasi kendaraan menggunakan kartu RFID
 - **Manajemen Kapasitas**: Counter otomatis yang melacak jumlah kendaraan
 - **Sistem Lock Otomatis**: Pintu masuk terkunci saat parkir penuh
 - **Dual Controller**: Sistem terdistribusi dengan Mega (master) dan Uno (slave)
 - **Real-time Monitoring**: Status parkir tersedia/penuh dengan indikator LED
 
-### 🔧 Fitur Teknis
+### Fitur Teknis
 - **Auto Detection**: Sensor ultrasonik mendeteksi kendaraan lewat
 - **Debounce Protection**: Mencegah pembacaan kartu ganda
 - **Timeout Safety**: Proteksi motor dan sensor dengan timeout
 - **Serial Communication**: Komunikasi antar Arduino menggunakan protokol custom
 - **Counter Protection**: Counter tidak bisa minus atau melebihi kapasitas
 
-### 🚨 Indikator Status
+### Indikator Status
 | Kondisi | LED Hijau | LED Merah | Buzzer |
 |---------|-----------|-----------|--------|
 | Parkir Tersedia | ON | OFF | - |
@@ -54,7 +43,7 @@ Sistem parkir otomatis ini merupakan solusi IoT untuk mengelola area parkir deng
 
 ---
 
-## 🛠️ Teknologi
+## Teknologi
 
 ### Hardware
 - **Mikrokontroler**
@@ -87,7 +76,7 @@ Mega → Uno:
 
 ---
 
-## 📦 Cara Instalasi
+## Cara Instalasi
 
 ### Prasyarat
 - Arduino IDE (versi 1.8.x atau lebih baru)
@@ -136,7 +125,7 @@ byte authorizedUID[][4] = {
 5. Pasang kembali koneksi TX/RX
 
 #### 5. Wiring
-Lihat diagram lengkap di folder `hardware/wiring/`
+Lihat diagram lengkap di `hardware/wiring/`
 
 **Koneksi Serial antar Arduino:**
 ```
@@ -153,38 +142,8 @@ Edit di `arduino_mega.ino`:
 
 ---
 
-## 📊 Hasil
+## Hasil
 
-### Demo Video
-> Tambahkan link video demo di sini
-
-### Screenshots
-> Tambahkan screenshot/foto sistem di sini
-
-### Serial Monitor Output
-```
-========================================
-  SISTEM PARKIR OTOMATIS - MASTER
-  PINTU MASUK + MANAJEMEN KAPASITAS
-========================================
-Kapasitas Maksimal: 5
-----------------------------------------
-Status Parkir: 0/5 (5 slot tersisa)
-Status: TERSEDIA
-----------------------------------------
-
-Sistem siap. Menunggu kartu RFID...
-
-UID Terdeteksi: 19 5A B5 02
->>> AKSES DITERIMA <<<
-Membuka palang masuk...
-Palang masuk terbuka.
-Menunggu kendaraan masuk...
-Kendaraan berhasil masuk!
-Counter: 1/5
-Menutup palang masuk...
-Palang masuk tertutup.
-```
 
 ### Performa Sistem
 - **Response Time**: < 500ms (deteksi kartu hingga palang bergerak)
@@ -195,7 +154,7 @@ Palang masuk tertutup.
 
 ---
 
-## 🚀 Pengembangan
+## Pengembangan
 
 ### Roadmap
 - [ ] LCD Display untuk menampilkan jumlah slot tersisa
@@ -206,14 +165,6 @@ Palang masuk tertutup.
 - [ ] Backup power menggunakan UPS
 - [ ] Cloud integration (IoT Platform)
 
-### Kontribusi
-Kontribusi sangat diterima! Berikut cara berkontribusi:
-
-1. Fork repository ini
-2. Buat branch fitur (`git checkout -b feature/AmazingFeature`)
-3. Commit perubahan (`git commit -m 'Add some AmazingFeature'`)
-4. Push ke branch (`git push origin feature/AmazingFeature`)
-5. Buat Pull Request
 
 ### Known Issues
 - Serial Monitor tidak bisa digunakan bersamaan dengan komunikasi antar Arduino (gunakan LED untuk debugging)
@@ -222,9 +173,7 @@ Kontribusi sangat diterima! Berikut cara berkontribusi:
 
 ---
 
-## 📚 Dokumentasi
-
-### Struktur Folder
+## Struktur Folder
 ```
 project-name/
 │
@@ -279,65 +228,3 @@ project-name/
 | Ultrasonic Echo | 3 | Echo sensor |
 | Serial TX | 1 | Komunikasi ke Mega |
 | Serial RX | 0 | Komunikasi dari Mega |
-
----
-
-## 📄 Lisensi
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-```
-MIT License
-
-Copyright (c) 2024 [Your Name]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
----
-
-## 👥 Tim Pengembang
-
-- **Your Name** - *Initial Work* - [GitHub Profile](https://github.com/yourusername)
-
----
-
-## 🙏 Acknowledgments
-
-- Arduino Community untuk support dan dokumentasi
-- MFRC522 Library contributors
-- Semua yang telah berkontribusi dalam project ini
-
----
-
-## 📞 Kontak
-
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - email@example.com
-
-Project Link: [https://github.com/yourusername/sistem-parkir-otomatis](https://github.com/yourusername/sistem-parkir-otomatis)
-
----
-
-<div align="center">
-
-**⭐ Jika project ini bermanfaat, berikan star di GitHub! ⭐**
-
-Made with ❤️ using Arduino
-
-</div>
